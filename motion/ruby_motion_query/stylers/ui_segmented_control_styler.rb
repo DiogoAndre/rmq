@@ -15,6 +15,12 @@ module RubyMotionQuery
       end
       alias :unshift= :prepend_segments=
 
+      def init_with_segments=(value)
+        if @view.rmq_data.style_name.nil?
+          self.prepend_segments = value
+        end
+      end
+      
     end
   end
 end
